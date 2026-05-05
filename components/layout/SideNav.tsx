@@ -13,18 +13,27 @@ export default function SideNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Find the IntelligenceSection by ID
-      const intelligenceSection = document.getElementById("intelligence-section");
+      const lightSections = [
+        document.getElementById("intelligence-section"),
+        document.getElementById("mission-section")
+      ];
       
-      if (intelligenceSection) {
-        const rect = intelligenceSection.getBoundingClientRect();
-        // Check if the intelligence section is overlapping where the SideNav is positioned (roughly top 20% to 80% of screen)
-        if (rect.top <= window.innerHeight * 0.8 && rect.bottom >= window.innerHeight * 0.2) {
-          setIsDarkText(true);
-        } else {
-          setIsDarkText(false);
+      let isOverLightSection = false;
+
+      for (const section of lightSections) {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // The SideNav is fixed around the top 20% to 60% of the screen.
+          // Therefore, the light section overlaps the nav if its top is above 60% of the viewport
+          // and its bottom is below 20% of the viewport.
+          if (rect.top <= window.innerHeight * 0.6 && rect.bottom >= window.innerHeight * 0.2) {
+            isOverLightSection = true;
+            break;
+          }
         }
       }
+
+      setIsDarkText(isOverLightSection);
     };
 
     window.addEventListener("scroll", handleScroll);

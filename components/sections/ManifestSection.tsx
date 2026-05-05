@@ -1,7 +1,7 @@
 import React from "react";
-import ManifestHeader from "./ManifestHeader";
-import ManifestImages from "./ManifestImages";
-import ManifestTextGrid from "./ManifestTextGrid";
+import ManifestHeader from "./manifest/ManifestHeader";
+import ManifestImages from "./manifest/ManifestImages";
+import ManifestTextGrid from "./manifest/ManifestTextGrid";
 
 export default function ManifestSection() {
   return (

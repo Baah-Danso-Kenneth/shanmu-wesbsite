@@ -1,12 +1,14 @@
-import Header from "@/components/Header";
-import SideNav from "@/components/SideNav";
-import HeroTitle from "@/components/HeroTitle";
-import HeroDetails from "@/components/HeroDetails";
-import FooterInfo from "@/components/FooterInfo";
-import ManifestSection from "@/components/ManifestSection";
-import ExcursionSection from "@/components/ExcursionSection";
-import IntelligenceSection from "@/components/IntelligenceSection";
-import CoreValuesCarousel from "@/components/CoreValuesCarousel";
+import Header from "@/components/layout/Header";
+import SideNav from "@/components/layout/SideNav";
+import HeroTitle from "@/components/hero/HeroTitle";
+import HeroDetails from "@/components/hero/HeroDetails";
+import FooterInfo from "@/components/layout/FooterInfo";
+import ManifestSection from "@/components/sections/ManifestSection";
+import ExcursionSection from "@/components/sections/ExcursionSection";
+import MissionSection from "@/components/sections/MissionSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import IntelligenceSection from "@/components/sections/IntelligenceSection";
+import CoreValuesCarousel from "@/components/sections/CoreValuesCarousel";
 
 export default function Home() {
   return (
@@ -22,6 +24,10 @@ export default function Home() {
       <ManifestSection />
       
       <ExcursionSection />
+
+      <MissionSection />
+
+      <TestimonialsSection />
 
       <IntelligenceSection />
 
