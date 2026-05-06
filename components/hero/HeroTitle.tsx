@@ -6,7 +6,8 @@ export default function HeroTitle() {
       <div className="text-[13vw] lg:text-[12vw] leading-[0.85] font-black tracking-tighter text-foreground uppercase flex flex-col">
         <span>IMPORT</span>
         <span>EXPORT</span>
-        <span>TOURISM.</span>
+        <span>TOURISM</span>
+        <span>CONSULTANCY.</span>
       </div>
     </div>
   );
