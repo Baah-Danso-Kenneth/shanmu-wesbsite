@@ -6,13 +6,18 @@ export default function AboutWelcome() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
         {/* Left Side: Circular Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shrink-0 bg-black/5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800" 
-              alt="Global Network"
-              className="w-full h-full object-cover"
-            />
+          <div className="relative">
+            {/* Creative Yellow Accent */}
+            <div className="absolute -top-4 -left-4 w-full h-full rounded-full bg-[#dfa63a] opacity-20 blur-2xl"></div>
+            
+            <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shrink-0 bg-black/5 z-10 border-4 border-[#dfa63a]/30">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                alt="Global Network"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
 

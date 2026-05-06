@@ -32,7 +32,7 @@ export default function AboutFounder() {
         <div className="flex flex-col gap-6 md:gap-10 pt-0 md:pt-12">
           {/* Quote Block */}
           <div className="flex flex-col mb-4 md:mb-0">
-            <div className="relative bg-[#C1D2CD] p-8 md:p-12 mb-8 md:mb-6">
+            <div className="relative bg-[#dfa63a] p-8 md:p-12 mb-8 md:mb-6">
               <p className="font-serif text-[15px] md:text-[17px] leading-[1.8] text-[#1c1c1c]">
                 For me, global trade and travel are the ultimate teachers. I love the way they broaden your perspective &mdash; you&apos;re exposed to new cultures, markets, people, and ideas. But, I also love what cross-border exchange teaches you about humanity - no matter how different we seem on the surface, we all are really similar at our core. We all want to thrive, connect, and have a voice - that&apos;s universal.
               </p>
@@ -41,7 +41,7 @@ export default function AboutFounder() {
               <div 
                 className="absolute -bottom-[24px] right-0 w-0 h-0"
                 style={{
-                  borderTop: '24px solid #2B766C',
+                  borderTop: '24px solid #dfa63a',
                   borderLeft: '24px solid transparent'
                 }}
               />

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export default function FooterInfo() {
@@ -13,7 +14,7 @@ export default function FooterInfo() {
         {/* Left Side: Big Text */}
         <div className="flex flex-col justify-center">
           <h2 className="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter uppercase leading-none mb-8">
-            INITIATE<br />CONTACT
+            LET&apos;S<br />CONNECT
           </h2>
           <div className="w-24 md:w-32 h-2 md:h-3 bg-[#dfa63a]"></div>
         </div>
@@ -24,12 +25,19 @@ export default function FooterInfo() {
             {/* Headquarters */}
             <div className="flex flex-col">
               <span className="text-[#dfa63a] text-[9px] md:text-[10px] font-bold tracking-widest uppercase mb-6">
-                HEADQUARTERS
+                LOCATIONS
               </span>
-              <div className="flex flex-col gap-3 text-sm md:text-base font-sans text-white/90">
-                <p>Quai du Seujet 24</p>
-                <p>1201 Genève</p>
-                <p>Switzerland</p>
+              <div className="flex flex-col gap-6 text-sm md:text-base font-sans text-white/90">
+                <div>
+                  <p className="font-bold text-white mb-1">GHANA</p>
+                  <p>Accra Digital Center</p>
+                  <p>Greater Accra, Ghana</p>
+                </div>
+                <div>
+                  <p className="font-bold text-white mb-1">CHINA</p>
+                  <p>Zhejiang Business Dist.</p>
+                  <p>Hangzhou, China</p>
+                </div>
               </div>
             </div>
 
@@ -39,10 +47,10 @@ export default function FooterInfo() {
                 CHANNELS
               </span>
               <div className="flex flex-col gap-4 text-lg md:text-xl font-serif text-white/90">
-                <a href="#" className="hover:opacity-70 transition-opacity">Import/Export Logistics</a>
-                <a href="#" className="hover:opacity-70 transition-opacity">Tourism & Travel</a>
-                <a href="#" className="hover:opacity-70 transition-opacity">Business Consultancy</a>
-                <a href="#" className="hover:opacity-70 transition-opacity">Company Insights</a>
+                <Link href="/trade" className="hover:opacity-70 transition-opacity">Import/Export</Link>
+                <Link href="/tourism" className="hover:opacity-70 transition-opacity">Tourism & Travel</Link>
+                <Link href="/consulting" className="hover:opacity-70 transition-opacity">Consultancy</Link>
+                <Link href="/about" className="hover:opacity-70 transition-opacity">About Shanmu</Link>
               </div>
             </div>
 
@@ -85,20 +93,13 @@ export default function FooterInfo() {
             <span className="text-[8px] md:text-[9px] font-bold tracking-widest uppercase text-white/60">
               @2026 SHANMU ALL RIGHTS RESERVED
             </span>
-            <div className="text-[8px] md:text-[9px] font-bold tracking-widest uppercase text-[#dfa63a]">
-              BUILT WITH LOVE BY A GEE
+            <div className="flex items-center gap-1.5 text-[8px] md:text-[9px] font-bold tracking-widest uppercase text-[#dfa63a]">
+              BUILT WITH <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-red-500"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg> BY A GEE
             </div>
           </div>
         </div>
 
       </div>
-
-      {/* Absolute Bottom Left Text */}
-      {/* <div className="absolute bottom-6 left-6 md:bottom-10 md:left-12 lg:left-24">
-        <span className="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-white/70">
-          EST. 1982 / GENEVA
-        </span>
-      </div> */}
 
       {/* Scroll to Top Button */}
       <div className="absolute bottom-6 right-6 md:bottom-10 md:right-12 lg:right-24">

@@ -1,11 +1,13 @@
-"use client";
+"use client"
+
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const navItems = [
-  { label: "ABOUT US", href: "#" },
-  { label: "LOGISTICS", href: "#" },
-  { label: "TOURISM", href: "#" },
-  { label: "CONSULTING", href: "#" },
+  { label: "ABOUT US", href: "/about" },
+  { label: "IMPORT/EXPORT", href: "/trade" },
+  { label: "TOURISM", href: "/tourism" },
+  { label: "CONSULTING", href: "/consulting" },
 ];
 
 export default function SideNav() {
@@ -17,7 +19,7 @@ export default function SideNav() {
         document.getElementById("intelligence-section"),
         document.getElementById("mission-section")
       ];
-      
+
       let isOverLightSection = false;
 
       for (const section of lightSections) {
@@ -39,7 +41,7 @@ export default function SideNav() {
     window.addEventListener("scroll", handleScroll);
     // Trigger once on mount
     handleScroll();
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -48,11 +50,10 @@ export default function SideNav() {
       <ul className="flex flex-col gap-6 md:gap-8 items-center w-full">
         {navItems.map((item) => (
           <li key={item.label} className="w-full flex justify-center">
-            <a
+            <Link
               href={item.href}
-              className={`text-[9px] md:text-[10px] font-bold tracking-widest transition-colors duration-500 hover:opacity-70 ${
-                isDarkText ? "text-[#1a1a1a]" : "text-white"
-              }`}
+              className={`text-[9px] md:text-[10px] font-bold tracking-widest transition-colors duration-500 hover:opacity-70 ${isDarkText ? "text-[#1a1a1a]" : "text-white"
+                }`}
               style={{
                 writingMode: "vertical-rl",
                 textOrientation: "mixed",
@@ -60,7 +61,7 @@ export default function SideNav() {
               }}
             >
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
