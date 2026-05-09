@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "A worldwide network for the curated exchange of commodities, culture, and strategic foresight.",
 };
 
+import PageLoader from "@/components/layout/PageLoader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +30,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden selection:bg-foreground selection:text-background">
+        <PageLoader />
         {children}
       </body>
     </html>
