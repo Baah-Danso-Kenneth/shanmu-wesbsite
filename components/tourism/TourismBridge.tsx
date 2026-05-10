@@ -1,27 +1,31 @@
+"use client";
 import React from 'react';
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function TourismBridge() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full bg-[#F5F3ED] text-[#1c1c1c] py-24 md:py-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
         {/* Left Side: Text Content */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 leading-tight text-[#1c1c1c]">
-            From the Gold Coast <br /> to the Middle Kingdom
+            {t.tourism_page.bridge.title_part1} <br /> {t.tourism_page.bridge.title_part2}
           </h2>
           <p className="font-mono text-sm md:text-base leading-relaxed max-w-md opacity-90 mb-8">
-            Whether you are a Chinese traveler seeking the hidden gems of Ghana, or a Ghanaian explorer ready to discover the marvels of China, we provide the ultimate gateway. Our services ensure that every journey is curated with the highest standards of luxury and local expertise.
+            {t.tourism_page.bridge.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex items-center gap-3 px-4 py-2 border border-[#1c1c1c] text-[10px] font-bold tracking-widest uppercase">
-              Ghana 
+              {t.tourism_page.bridge.routes.gh_to_cn.split(' to ')[0]} 
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              China
+              {t.tourism_page.bridge.routes.gh_to_cn.split(' to ')[1] || t.tourism_page.bridge.routes.gh_to_cn.split(' 往返 ')[1]}
             </div>
             <div className="flex items-center gap-3 px-4 py-2 border border-[#1c1c1c] text-[10px] font-bold tracking-widest uppercase">
-              China 
+              {t.tourism_page.bridge.routes.cn_to_gh.split(' to ')[0]} 
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              Ghana
+              {t.tourism_page.bridge.routes.cn_to_gh.split(' to ')[1] || t.tourism_page.bridge.routes.cn_to_gh.split(' 往返 ')[1]}
             </div>
           </div>
         </div>

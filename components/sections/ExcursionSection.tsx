@@ -1,6 +1,11 @@
+"use client";
 import React from "react";
+import Link from "next/link";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function ExcursionSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full min-h-screen bg-[#9ea692] text-foreground flex items-center px-6 md:px-12 lg:px-24 py-24">
       <div className="max-w-[1800px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
@@ -14,9 +19,6 @@ export default function ExcursionSection() {
               alt="City at night"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
-            {/* <div className="absolute bottom-4 left-4 text-[8px] md:text-[9px] font-bold tracking-widest text-white/70 uppercase z-10 mix-blend-difference">
-              1135.2050° N, 34.9080° E
-            </div> */}
           </div>
         </div>
 
@@ -29,18 +31,18 @@ export default function ExcursionSection() {
           </div>
 
           <h2 className="flex flex-col text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-black tracking-tighter uppercase leading-[0.85] mb-8 break-words">
-            <span>GLOBAL</span>
-            <span className="font-serif italic font-normal tracking-normal">EXPERIENCES</span>
+            <span>{t.excursion.title_part1}</span>
+            <span className="font-serif italic font-normal tracking-normal">{t.excursion.title_part2}</span>
           </h2>
 
           <p className="text-sm md:text-base font-medium leading-relaxed max-w-md text-foreground/80 mb-12">
-            Bespoke travel itineraries and exclusive tourism packages. We leverage our international networks to provide access to breathtaking landscapes and cultural landmarks worldwide.
+            {t.excursion.description}
           </p>
 
           <div>
-            <a href="#" className="inline-block border-b border-black text-[10px] md:text-xs font-bold tracking-widest uppercase pb-1 hover:opacity-70 transition-opacity">
-              EXPLORE DESTINATIONS
-            </a>
+            <Link href="/tourism" className="inline-block border-b border-black text-[10px] md:text-xs font-bold tracking-widest uppercase pb-1 hover:opacity-70 transition-opacity">
+              {t.buttons.explore_destinations}
+            </Link>
           </div>
         </div>
 

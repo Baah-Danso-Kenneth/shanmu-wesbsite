@@ -1,6 +1,10 @@
+"use client";
 import React from 'react';
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function AboutFounder() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full bg-[#F5F3ED] px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
@@ -34,7 +38,7 @@ export default function AboutFounder() {
           <div className="flex flex-col mb-4 md:mb-0">
             <div className="relative bg-[#dfa63a] p-8 md:p-12 mb-8 md:mb-6">
               <p className="font-serif text-[15px] md:text-[17px] leading-[1.8] text-[#1c1c1c]">
-                For me, global trade and travel are the ultimate teachers. I love the way they broaden your perspective &mdash; you&apos;re exposed to new cultures, markets, people, and ideas. But, I also love what cross-border exchange teaches you about humanity - no matter how different we seem on the surface, we all are really similar at our core. We all want to thrive, connect, and have a voice - that&apos;s universal.
+                {t.about_page.founder.quote}
               </p>
               
               {/* The Triangle Tail */}
@@ -50,7 +54,7 @@ export default function AboutFounder() {
             {/* Author */}
             <div className="text-right pr-2">
               <span className="text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase text-[#4b7064]">
-                &mdash; FOUNDER, SHANMU
+                &mdash; {t.about_page.founder.author}
               </span>
             </div>
           </div>

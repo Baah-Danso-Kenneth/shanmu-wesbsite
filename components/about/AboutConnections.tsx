@@ -1,6 +1,10 @@
+"use client";
 import React from 'react';
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function AboutConnections() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full bg-[#9ea692] text-[#1c1c1c] py-24 md:py-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
@@ -20,16 +24,16 @@ export default function AboutConnections() {
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <div className="max-w-md flex flex-col items-center md:items-start">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 leading-tight text-[#1c1c1c]">
-              Deep connections aren&apos;t a tourist attraction.
+              {t.about_page.connections.title}
             </h2>
             <p className="font-mono text-sm md:text-base leading-relaxed mb-10 opacity-90 text-center md:text-left text-[#1c1c1c]">
-              We&apos;re here for all visionaries, who shy away from cookie-cutter imports and tours, and are looking for something truly transformational. They don&apos;t want to be treated like mere clients. They want to be treated like a partner. They want to be inspired and energized by the company of other visionaries and meaningful human connections.
+              {t.about_page.connections.description}
             </p>
             <a 
               href="#join-us" 
               className="inline-block bg-[#4b7064] text-[#F5F3ED] px-8 py-4 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-[#1c1c1c] transition-colors duration-300"
             >
-              SOUND LIKE YOU? THIS WAY.
+              {t.about_page.connections.button}
             </a>
           </div>
         </div>

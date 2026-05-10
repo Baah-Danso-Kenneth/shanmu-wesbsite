@@ -1,53 +1,37 @@
+"use client";
 import React from "react";
+import Link from "next/link";
+import { useTranslation } from "@/context/LanguageContext";
 
 const images = [
-  {
-    src: "https://images.pexels.com/photos/1095814/pexels-photo-1095814.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Global Shipping",
-  },
-  {
-    src: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Beautiful Destination",
-  },
-  {
-    src: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Strategic Consultancy",
-  },
-  {
-    src: "https://images.pexels.com/photos/163726/pexels-photo-163726.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Logistics",
-  },
-  {
-    src: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Luxury Resort",
-  },
-  {
-    src: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Modern Office",
-  },
-  {
-    src: "https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Coastal Destination",
-  },
-  {
-    src: "https://images.pexels.com/photos/2088210/pexels-photo-2088210.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Cargo Containers",
-  },
-  {
-    src: "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Global Consulting Team",
-  },
+  { src: "/images/bus-1.jpeg", alt: "Global Trade" },
+  { src: "/images/tourism-1.jpeg", alt: "Bespoke Travel" },
+  { src: "/images/consult-2.jpeg", alt: "Strategic Advisory" },
+  { src: "/images/bus-2.jpeg", alt: "Business Operations" },
+  { src: "/images/tourism-2.jpeg", alt: "International Tours" },
+  { src: "/images/consult-1.jpeg", alt: "Market Insights" },
+  { src: "/images/edu-1.jpeg", alt: "Education Placement" },
+  { src: "/images/edu-2.jpeg", alt: "Scholarship Support" },
+  { src: "/images/sam-1.jpeg", alt: "Shanmu Enterprise" },
 ];
 
 export default function MissionSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="mission-section" className="relative w-full bg-[#F5F3ED] text-[#1c1c1c] py-24 md:py-32 px-6">
       
-      {/* Image Grid */}
+      {/* Image Grid - Responsive Strategy */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 px-4 md:px-8 mb-16 md:mb-24 mt-8 md:mt-12">
         {images.map((img, idx) => (
-          <div key={idx} className="relative aspect-[3/2] overflow-hidden group bg-black/5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div 
+            key={idx} 
+            className={`relative aspect-[3/2] overflow-hidden group bg-black/5 ${
+              idx >= 3 ? "hidden lg:block" : "" // Show 3 on mobile/tablet, 9 on desktop
+            } ${
+              idx === 0 ? "sm:col-span-2 lg:col-span-1" : "" // First image wider on tablet
+            }`}
+          >
             <img 
               src={img.src} 
               alt={img.alt} 
@@ -60,19 +44,19 @@ export default function MissionSection() {
       {/* Text Content */}
       <div className="max-w-4xl mx-auto text-center px-4 pb-12">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1c1c1c] mb-10 leading-tight">
-          In the business of unlocking <span className="italic">global potential.</span>
+          {t.mission.title_part1}<span className="italic">{t.mission.title_part2}</span>
         </h2>
         
         <p className="text-sm md:text-base font-mono text-[#1c1c1c]/80 leading-relaxed mb-12 max-w-3xl mx-auto tracking-wide">
-          We specialize in bespoke international trade, exclusive travel experiences, and high-level consultancy. If you are inspired by seamless global operations and making meaningful connections that cross borders, Shanmu is for you.
+          {t.mission.description}
         </p>
         
-        <a 
-          href="#" 
+        <Link 
+          href="/about" 
           className="inline-block border-2 border-[#1c1c1c] px-8 py-4 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-[#1c1c1c] hover:text-[#F5F3ED] transition-colors duration-300"
         >
-          More About Us
-        </a>
+          {t.buttons.more_about_us}
+        </Link>
       </div>
 
     </section>
