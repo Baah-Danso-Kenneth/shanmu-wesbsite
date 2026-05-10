@@ -3,18 +3,18 @@ import React from "react";
 const images = [
   {
     ref: "REF: IX-4401",
-    src: "https://images.pexels.com/photos/163726/pexels-photo-163726.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Shipping Port",
+    src: "/images/bus-1.jpeg",
+    alt: "Import and Export",
   },
   {
     ref: "REF: IX-4402",
-    src: "https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Kyoto Pagoda",
+    src: "/images/tourism-1.jpeg",
+    alt: "Exclusive Tourism",
   },
   {
     ref: "REF: IX-4403",
-    src: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Vehicle",
+    src: "/images/consult-2.jpeg",
+    alt: "Strategic Consultancy",
   },
 ];
 
